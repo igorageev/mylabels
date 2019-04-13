@@ -1,0 +1,62 @@
+[
+    {
+      "id": "01",
+      "description": "Plate 1x1",
+      "items": "3024"
+    },
+    {
+      "id": "02",
+      "description": "Plate 1x2",
+      "items": "15573 3023"
+    },
+    {
+      "id": "03",
+      "description": "Plate 1x3",
+      "items": "3623"
+    },
+    {
+      "id": "04",
+      "description": "Plate 1x4",
+      "items": "3710"
+    },
+    {
+      "id": "05",
+      "description": "Brick 1x1",
+      "items": "3005"
+    },
+    {
+      "id": "06",
+      "description": "Brick 1x2",
+      "items": "3004"
+    },
+    {
+      "id": "07",
+      "description": "Brick 1x3",
+      "items": "3622"
+    },
+    {
+      "id": "08",
+      "description": "Brick 1x4",
+      "items": "3010"
+    },
+    {
+      "id": "09",
+      "description": "Plate 2x2 with 1 stud",
+      "items": "87580"
+    },
+    {
+      "id": "10",
+      "description": "Plate 2x2",
+      "items": "3022"
+    },
+    {
+      "id": "11",
+      "description": "Plate 2x3",
+      "items": "3021"
+    },
+    {
+      "id": "12",
+      "description": "Plate 2x4",
+      "items": "8200"
+    }
+  ]
