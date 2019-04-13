@@ -69,7 +69,7 @@
     </div>
 
     <div id="source" class="uk-position-fixed uk-position-medium uk-position-bottom-right">
-      <a href="data/example-eng.csv" class="circle uk-button uk-button-primary uk-button-large" uk-icon="icon: github"></a>
+      <a href="https://github.com/igorageev/mylabels" class="circle uk-button uk-button-primary uk-button-large" uk-icon="icon: github"></a>
     </div>
 
     <div id="modal" uk-modal>
