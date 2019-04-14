@@ -25,7 +25,7 @@ npm run build
 
 ## Addition
 
-I use Stanley storage boxes (1-93-980, 1-93-978) and ProMEGA label 48,5 х 25,4 mm.
+I use Stanley storage boxes (1-93-980, 1-93-978) and ProMEGA label 48,5 х 25,4 mm to organizing the workplace of my sons.
 
 <p align="center">
   <br/>
