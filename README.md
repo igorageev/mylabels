@@ -27,4 +27,6 @@ npm run build
 
 I use Stanley storage boxes (1-93-980, 1-93-978) and ProMEGA label 48,5 х 25,4 mm.
 
-![result](/result.jpg)
+<p align="center">
+  <img src="/result.jpg" width="50%">
+</p>
