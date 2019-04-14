@@ -50,7 +50,7 @@
         <tbody>
           <tr>
             <td>Listing</td>
-            <td>Download and edit this <a href="data/example-eng.csv">csv file</a> in any text editor. Each line of the file is a label record. Each record consists three fields, separated by commas: index number, description and images. You can download the archive with even more examples.</td>
+            <td>Download this <a href="data/examples.zip">archive</a> and edit csv files from it in any text editor. Each line of the file is a label record. Each record consists three fields, separated by commas: index number, description and images.</td>
           </tr>
           <tr>
             <td>Opening</td>
