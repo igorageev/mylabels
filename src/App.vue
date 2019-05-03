@@ -45,7 +45,7 @@ export default {
   },
   created: function () {
     var overlay = document.getElementById('overlay')
-    //setTimeout("overlay.remove()", 1000);
+    setTimeout("overlay.remove()", 1000);
   },
   methods: {
     /**
