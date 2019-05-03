@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar name="MyLabels" v-on:dataReceived="changeList"></nav-bar>
+    <nav-bar name="MyLabels" v-on:fileParsed="changeList"></nav-bar>
 
     <div class="container border">
       <div v-for="item in items" :key="item.id" class="label">
@@ -22,13 +22,14 @@
 </template>
 
 <script>
-import UIkit from 'uikit'
-import Icons from 'uikit/dist/js/uikit-icons'
-import initList from './data/init.json'
-import NavBar from './components/NavBar.vue'
-import SetupModal from './components/SetupModal.vue'
+import UIkit from 'uikit' // Front-end framework
+import Icons from 'uikit/dist/js/uikit-icons' // Icon library
+import initList from './data/init.json' // Initial parts list
+// Components
+import NavBar from './components/NavBar.vue' // For user interaction
+import SetupModal from './components/SetupModal.vue' // For setting layout
 
-UIkit.use(Icons)
+UIkit.use(Icons) // Loads the Icon plugin
 
 export default {
   name: 'App',
@@ -38,11 +39,15 @@ export default {
   },
   data: function () {
     return {
-      imagePath: 'data/images/',
-      items: initList
+      items: initList, // List of parts
+      imagePath: 'data/images/' // Directory with pictures of parts
     }
   },
   methods: {
+    /**
+     * Updates list of parts
+     * @param {Array} newList - List of parts
+     */
     changeList: function (newList) {
       this.items = newList
     }

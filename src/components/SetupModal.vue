@@ -83,7 +83,6 @@ export default {
         topMargin: 22,
         leftMargin: 8
       },
-      theme: 'border',
       isBorder: true,
       style: document.createElement('style')
     }
@@ -93,6 +92,7 @@ export default {
     this.setupLayout()
   },
   methods: {
+    /* Updates style injection for customizing layout */
     setupLayout: function () {
       var lineHeightHead = this.layout.numberSize > 15
         ? Math.floor(this.layout.numberSize * 0.85)
