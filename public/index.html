@@ -11,7 +11,45 @@
     <noscript>
       <strong>We're sorry but mylabels doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <div id="wellcome" class="container">
+      <h1>Getting started</h1>
+      <p>
+        Welcome to MyLabels! This simple web-app helps you create collection of labels to organize your LEGO
+        storage solution, that will allow you understand what you have and quickly find what you need.
+      </p>
+    </div>
     <div id="app"></div>
+    <div id="help" class="container">
+      <table class="uk-table uk-table-justify uk-table-divider">
+        <thead>
+          <tr>
+            <th class="uk-width-small">Steps</th>
+            <th>Descriptions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Listing</td>
+            <td>Download this <a href="data/examples.zip">archive</a> and edit csv files from it in any text editor. Each line of the file is a label record. Each record consists three fields, separated by commas: index number, description and images.</td>
+          </tr>
+          <tr>
+            <td>Opening</td>
+            <td>Open the result of the previous step in this application by clicking the [OPEN] button in navbar and selecting the csv file.</td>
+          </tr>
+          <tr>
+            <td>Setting</td>
+            <td>Click [SETUP] button to call the dialog window with the settings of the appearance.</td>
+          </tr>
+          <tr>
+            <td>Printing</td>
+            <td>Click [PRINT] button.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="source" class="uk-position-fixed uk-position-medium uk-position-bottom-right">
+      <a href="https://github.com/igorageev/mylabels" class="circle uk-button uk-button-primary uk-button-large" uk-icon="icon: github"></a>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
