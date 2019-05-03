@@ -43,6 +43,10 @@ export default {
       imagePath: 'data/images/' // Directory with pictures of parts
     }
   },
+  created: function () {
+    var overlay = document.getElementById('overlay')
+    //setTimeout("overlay.remove()", 1000);
+  },
   methods: {
     /**
      * Updates list of parts
