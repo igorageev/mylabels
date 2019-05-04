@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar name="MyLabels" v-on:fileParsed="changeList"></nav-bar>
+    <nav-bar name="MyLabels" v-on:fileParsed="updateList"></nav-bar>
 
     <div class="container border">
       <div v-for="item in items" :key="item.id" class="label">
@@ -45,14 +45,14 @@ export default {
   },
   created: function () {
     var overlay = document.getElementById('overlay')
-    setTimeout("overlay.remove()", 1000);
+    setTimeout(function () { overlay.remove() }, 1000)
   },
   methods: {
     /**
      * Updates list of parts
      * @param {Array} newList - List of parts
      */
-    changeList: function (newList) {
+    updateList: function (newList) {
       this.items = newList
     }
   }
