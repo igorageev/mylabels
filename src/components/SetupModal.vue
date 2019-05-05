@@ -4,6 +4,21 @@
       <h2 class="uk-modal-title">Setup</h2>
       <form class="uk-grid-small" uk-grid>
 
+        <div class="uk-width-1-1@s">
+          <label class="uk-form-label" for="rowWidth">
+            Row width
+            <span class="uk-text-muted">(mm)</span>
+          </label>
+          <input
+            v-model="layout.containerWidth"
+            @input="setupLayout"
+            id="rowWidth"
+            class="uk-input"
+            type="text"
+            placeholder="48.5"
+          >
+        </div>
+
         <div class="uk-width-1-2@s">
           <label class="uk-form-label" for="labelWidth">
             Label width
@@ -34,27 +49,28 @@
         </div>
 
         <div class="uk-width-1-2@s">
-          <label class="uk-form-label" for="numbersize">
+          <label class="uk-form-label" for="topMargin">
             Top margin of the page
             <span class="uk-text-muted">(mm)</span>
           </label>
           <input
             v-model="layout.topMargin"
             @input="setupLayout"
-            id="numbersize"
+            id="topMargin"
             class="uk-input"
             type="text"
             placeholder="22"
           >
         </div>
         <div class="uk-width-1-2@s">
-          <label class="uk-form-label" for="fontsize">
+          <label class="uk-form-label" for="leftMargin">
             Left margin of the page
             <span class="uk-text-muted">(mm)</span>
           </label>
           <input
             v-model="layout.leftMargin"
             @input="setupLayout"
+            id="leftMargin"
             class="uk-input"
             type="text"
             placeholder="8"
@@ -76,13 +92,14 @@
           >
         </div>
         <div class="uk-width-1-2@s">
-          <label class="uk-form-label" for="fontsize">
+          <label class="uk-form-label" for="textSize">
             Descriptions font size
             <span class="uk-text-muted">(pt)</span>
           </label>
           <input
             v-model="layout.textSize"
             @input="setupLayout"
+            id="textSize"
             class="uk-input"
             type="text"
             placeholder="8"
@@ -94,7 +111,6 @@
             <input v-model="isBorder" class="uk-checkbox" @change="setupLayout" type="checkbox" checked> Show border
           </label>
         </div>
-        
       </form>
 
       <p class="uk-text-right">
@@ -111,6 +127,7 @@ export default {
   data: function () {
     return {
       layout: {
+        containerWidth: 194.5,
         labelWidth: 48.5,
         labelHeight: 25.4,
         numberSize: 22,
@@ -137,9 +154,11 @@ export default {
         ? '.label {width: ' + this.layout.labelWidth + 'mm; ' +
           'height: ' + this.layout.labelHeight + 'mm;}'
         : ''
+      var rowWidth = this.layout.containerWidth
+        ? '.container {width: ' + this.layout.containerWidth + 'mm;}'
+        : ''
       this.style.innerText =
-        labelSize +
-        border +
+        labelSize + rowWidth + border +
         '.label h1 {font-size: ' + this.layout.numberSize + 'pt; line-height: ' + this.layout.numberSize + 'pt;}' +
         '.label p {font-size: ' + this.layout.textSize + 'pt;}' +
         '@media print { .container {margin: ' + this.layout.topMargin + 'mm ' + this.layout.leftMargin + 'mm;} }'
