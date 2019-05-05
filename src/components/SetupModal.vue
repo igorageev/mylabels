@@ -15,7 +15,7 @@
             id="rowWidth"
             class="uk-input"
             type="text"
-            placeholder="48.5"
+            placeholder="194.5"
           >
         </div>
 
