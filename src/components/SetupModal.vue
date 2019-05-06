@@ -4,7 +4,7 @@
       <h2 class="uk-modal-title">Setup</h2>
       <form class="uk-grid-small" uk-grid>
 
-        <div class="uk-width-1-1@s">
+        <div class="uk-width-1-2@s">
           <label class="uk-form-label" for="rowWidth">
             Row width
             <span class="uk-text-muted">(mm)</span>
@@ -16,6 +16,20 @@
             class="uk-input"
             type="text"
             placeholder="194.5"
+          >
+        </div>
+        <div class="uk-width-1-2@s">
+          <label class="uk-form-label" for="labelPadding">
+            Label padding
+            <span class="uk-text-muted">(mm)</span>
+          </label>
+          <input
+            v-model="layout.labelPadding"
+            @input="setupLayout"
+            id="labelPadding"
+            class="uk-input"
+            type="text"
+            placeholder="1"
           >
         </div>
 
@@ -130,6 +144,7 @@ export default {
         containerWidth: 194.5,
         labelWidth: 48.5,
         labelHeight: 25.4,
+        labelPadding: 1,
         numberSize: 22,
         textSize: 8,
         topMargin: 22,
@@ -139,6 +154,39 @@ export default {
       style: document.createElement('style')
     }
   },
+  computed: {
+    containerBorder: function () {
+      return this.isBorder
+        ? 'border-top-color: lightgray; border-left-color: lightgray;'
+        : ''
+    },
+    labelBorder: function () {
+      return this.isBorder
+        ? 'border-bottom-color: lightgrey;border-right-color: lightgrey;'
+        : ''
+    },
+    labelSize: function () {
+      return this.layout.labelWidth
+        ? 'width: ' + this.layout.labelWidth + 'mm; ' +
+          'height: ' + this.layout.labelHeight + 'mm;'
+        : ''
+    },
+    rowWidth: function () {
+      return this.layout.containerWidth
+        ? 'width: ' + this.layout.containerWidth + 'mm;'
+        : ''
+    },
+    labelPadding: function () {
+      return this.layout.labelPadding
+        ? 'padding: ' + this.layout.labelPadding + 'mm;'
+        : ''
+    },
+    paragraphPadding: function () {
+      return this.layout.labelPadding
+        ? 'padding-left: ' + this.layout.labelPadding + 'mm;'
+        : ''
+    }
+  },
   created: function () {
     document.body.append(this.style)
     this.setupLayout()
@@ -146,21 +194,12 @@ export default {
   methods: {
     /* Updates style injection for customizing layout */
     setupLayout: function () {
-      var border = this.isBorder
-        ? '.border {border-top-color: lightgray; border-left-color: lightgray;}' +
-          '.border .label {border-bottom-color: lightgrey;border-right-color: lightgrey;}'
-        : ''
-      var labelSize = this.layout.labelWidth
-        ? '.label {width: ' + this.layout.labelWidth + 'mm; ' +
-          'height: ' + this.layout.labelHeight + 'mm;}'
-        : ''
-      var rowWidth = this.layout.containerWidth
-        ? '.container {width: ' + this.layout.containerWidth + 'mm;}'
-        : ''
       this.style.innerText =
-        labelSize + rowWidth + border +
+        '.container {' + this.rowWidth + '}' +
+        '.border {' + this.containerBorder + '}' +
+        '.label {' + this.labelPadding + this.labelSize + this.labelBorder + '}' +
         '.label h1 {font-size: ' + this.layout.numberSize + 'pt; line-height: ' + this.layout.numberSize + 'pt;}' +
-        '.label p {font-size: ' + this.layout.textSize + 'pt;}' +
+        '.label p {font-size: ' + this.layout.textSize + 'pt; ' + this.paragraphPadding + '}' +
         '@media print { .container {margin: ' + this.layout.topMargin + 'mm ' + this.layout.leftMargin + 'mm;} }'
     }
   }
